@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
-import { JollaContext } from '../context/jollas';
+import { VentaContext } from '../context/ventas';
 
 
 const Books = () => {
-    const { jollas } = useContext(JollaContext);
+    const { jollas } = useContext(VentaContext);
 
     if (!jollas.length) {
         return <h3>No Books Available</h3>
@@ -12,7 +12,7 @@ const Books = () => {
 
     return (
         <section className="books">
-            {jollas.map(({ image: image, id, title }) => (
+            {jollas.map(({ image, id, title }) => (
                 <article key={id} className="book">
                     <div className="book-image">
                         <img src={image} alt={title} />

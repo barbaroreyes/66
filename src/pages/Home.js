@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 
-import { JollaContext } from "../context/jollas";
+import { VentaContext } from "../context/ventas";
 
 const Home = () => {
-    const { featured } = useContext(JollaContext);
+    const { featured } = useContext(VentaContext);
     if (!featured.length) {
         return <h3>No Featured Jollas</h3>
     }

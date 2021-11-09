@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {VentaProvider} from './context/ventas';
+import { CartProvider } from './context/cart';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <VentaProvider>
+     <CartProvider>
+     <React.StrictMode>
     <App />
-  </React.StrictMode>,
+   </React.StrictMode>
+
+     </CartProvider>
+  </VentaProvider>
+ 
+ ,
   document.getElementById('root')
 );
 

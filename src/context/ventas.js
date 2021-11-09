@@ -5,9 +5,9 @@ import { listVentas } from "../graphql/queries";
 import { processOrder } from "../graphql/mutations";
 
 
-const JollaContext = React.createContext();
+const VentaContext = React.createContext();
 
-const JollaProvider = ({ children }) => {
+const VentaProvider = ({ children }) => {
   const [jollas, setJollass] = useState([]);
   const [featured, setFeatured] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -50,10 +50,10 @@ const JollaProvider = ({ children }) => {
   };
 
   return (
-    <JollaContext.Provider value={{ jollas, featured, loading, checkout }}>
+    <VentaContext.Provider value={{ jollas, featured, loading, checkout }}>
       {children}
-    </JollaContext.Provider>
+    </VentaContext.Provider>
   );
 };
 
-export { JollaContext, JollaProvider };
+export { VentaContext, VentaProvider };

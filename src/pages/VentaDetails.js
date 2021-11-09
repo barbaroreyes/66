@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import { JollaContext } from "../context/jollas";
+import { useParams, useNavigate } from "react-router-dom";
+import { VentaContext } from "../context/ventas";
 import { CartContext } from "../context/cart";
 
 const JollaDetails = () => {
   const { id } = useParams();
-  const history = useHistory();
-  const { jollas } = useContext(JollaContext);
+  const history = useNavigate();
+  const { jollas } = useContext(VentaContext);
   const { addToCart } = useContext(CartContext);
 
   const jolla = jollas.find((jolla) => {

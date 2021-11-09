@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
-import { JollaContext } from "../context/jollas";
+import { useNavigate} from "react-router-dom";
+import { VentaContext } from "../context/ventas";
 import { CartContext } from "../context/cart";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
@@ -24,18 +24,18 @@ const CARD_ELEMENT_OPTIONS = {
 
 const CheckoutForm = () => {
   const { cart, total, clearCart } = useContext(CartContext);
-  const { checkout } = useContext(JollaContext);
+  const { checkout } = useContext(VentaContext);
   const [orderDetails, setOrderDetails] = useState({ cart, total, address: null, token: null });
   const [error, setError] = useState(null);
   const stripe = useStripe();
   const elements = useElements();
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(() => {
     if (orderDetails.token) {
       checkout(orderDetails);
       clearCart();
-      history.push("/");
+      history("/");
     }
   }, [orderDetails]);
 
