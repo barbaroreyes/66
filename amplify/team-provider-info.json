@@ -18,11 +18,11 @@
       "function": {
         "createOrders": {
           "deploymentBucketName": "amplify-66kilqy-dev-30146-deployment",
-          "s3Key": "amplify-builds/createOrders-516847734d504838587a-build.zip"
+          "s3Key": "amplify-builds/createOrders-6b395259544630676278-build.zip"
         },
         "processsPayment": {
           "deploymentBucketName": "amplify-66kilqy-dev-30146-deployment",
-          "s3Key": "amplify-builds/processsPayment-36625a4e425234423972-build.zip"
+          "s3Key": "amplify-builds/processsPayment-6856766c794d6a464848-build.zip"
         }
       }
     }

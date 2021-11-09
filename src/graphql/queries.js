@@ -89,9 +89,6 @@ export const listVentas = /* GraphQL */ `
         categoria
         featured
         price
-        orders {
-          nextToken
-        }
         createdAt
         updatedAt
       }
