@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import {ArrowLeftOutlined,ArrowRightOutlined} from '@material-ui/icons';
 import { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import Data from '../compo/Data'
 
 const Container = styled.div`
@@ -80,6 +81,7 @@ cursor:pointer;
 
 
 const Slider = () => {
+    const history = useNavigate()
     const [slideIndex,setSlideIndex] = useState(0)
     const handleClick = (direction) => {
     if(direction ==='left'){
@@ -103,7 +105,7 @@ const Slider = () => {
                 <InfoConten>
                     <Title>{item.name}</Title>
                     <Description>{item.description}</Description>
-                    <Button>Shop Now</Button>
+                    <Button onClick={()=> history('/login')}>Shop Now</Button>
               </InfoConten> 
               
                 </Slide>
