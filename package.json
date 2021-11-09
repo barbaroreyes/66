@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.22",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.1.0",
+    "@mui/material": "^5.1.0",
     "@stripe/react-stripe-js": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,6 +18,7 @@
     "react-router-dom": "^6.0.1",
     "react-scripts": "4.0.3",
     "stripe": "^8.186.1",
+    "styled-components": "^5.3.3",
     "uuid": "^3.4.0",
     "web-vitals": "^1.0.1"
   },
