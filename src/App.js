@@ -5,7 +5,10 @@ import Header from './compo/Header.js';
 import Footer from './compo/Footer';
 // import Cart from './pages/Cart';
 import Home from './pages/Home';
+import Elements from './pages/Elements'
+import Element from './compo/Element'
 import LondingPage from './pages/LondingPage';
+import data from './compo/Data';
 // import Prendas from './pages/Ventas'
 // import VentaDetails from './pages/VentaDetails';
 // import Error from './pages/Error'
@@ -20,8 +23,10 @@ function App() {
       <Header/>
         <Routes>
        <Route path='/' element={<LondingPage/>}/>
-       <Route path='/login' element={<Home/>}/>
-       {/* <Route path='/home' element={<Home/>}/>
+       <Route path='/login' element={<Home data={data}/>}/>
+       <Route path='/elements' element={<Elements/>}/>
+       <Route path='/elements/:id' element={<Element/>}/>
+       {/* 
        <Route path='/cart' element={<Cart/>}/>
        <Route path='/checkout' element={<Checkout/>}/>
        <Route path='/prendas/:id' element={<VentaDetails/>}/>

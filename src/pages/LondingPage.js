@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 import {ArrowLeftOutlined,ArrowRightOutlined} from '@material-ui/icons';
 import { useState } from 'react';
@@ -7,9 +6,8 @@ import Data from '../compo/Data'
 
 const Container = styled.div`
 width: 100%; 
-height:100vh;
+height:80vh;
 display:flex;
-// background-color: salmon;
 position:relative;
 overflow:hidden;
 

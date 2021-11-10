@@ -1,4 +1,5 @@
 import React,{useState , useEffect} from 'react'
+import styled from 'styled-components';
 import Amplify ,{API , graphqlOperation } from "aws-amplify";
 import {listVentas} from '../graphql/queries'
 import {withAuthenticator,AmplifySignOut} from '@aws-amplify/ui-react'
@@ -6,7 +7,16 @@ import awsExport from '../aws-exports';
 import Categorias from './Categorias'
 Amplify.configure(awsExport)
 
-const Home = () => {
+
+
+const Container = styled.div`
+width:100%;
+
+
+
+`
+
+const Home = (props) => {
  const [ventas ,setVentas] = useState([])
 
 useEffect(()=>{
@@ -27,10 +37,10 @@ useEffect(()=>{
  }
 
   return (
-    <div syle={{color:'red'}}>
+    <Container >
      <AmplifySignOut/>
-     <Categorias/>
-    </div>
+     <Categorias ventas={ventas}/>
+    </Container>
   )
 }
 
