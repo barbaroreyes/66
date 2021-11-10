@@ -10,13 +10,36 @@ flex-wrap:wrap;
 
 
 `
+const Buttons = styled.div`
+width:100%;
+
+
+
+`
+const Button = styled.button`
+width:300px;
+padding:20px;
+margin:30px;
+font-size:22px;
+
+`
 
 
 const Elements = (props) => {
  
   
-  return (
-    <Container>
+  return (<>
+  <Buttons>
+  <Button>Aretes</Button>
+  <Button>Conjuntos</Button>
+  <Button>Cadenas</Button>
+  <Button>Esclavas</Button>
+  <Button>Pulsos</Button>
+  
+  </Buttons>
+            
+           <Container>
+      
       {props.ventas.map((item,i)=>{
         return (
           <Element
@@ -26,6 +49,8 @@ const Elements = (props) => {
       })}
       
     </Container>
+        </>
+    
   )
 }
 

@@ -5,12 +5,12 @@ import {useParams} from  'react-router-dom';
 
 const Container = styled.div`
 width:450px;
-height:70vh;
+height:50vh;
 display:flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-// border:1px solid;
+border:1px solid;
 margin :70px;
 padding:20px;
 `
