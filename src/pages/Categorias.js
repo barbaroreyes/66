@@ -4,29 +4,29 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 width:100%;
-// height:80vh;
-// display:flex;
 display:flex;
 flex-wrap: wrap;
-
+justify-content: center;
+border:1px solid;
+margin-top:100px;
+`
+const H1 = styled.h1`
+width:100%;
 `
 
-
 const Categorias = ({ventas}) => {
-  console.log('props in categoria', ventas)
-//  const filtered = props.ventas.filter(item => item.categoria)
   
+
   return (
     <Container>
-      Categoria
-      {/* {filtered} */}
-     {ventas.map((item , i)=>{
-   return (
-       <Categoria  
-       key={i}
-      {...item}/>
-   )
-     })}
+      <H1>Categorias</H1>
+      {ventas.map((item,i)=>{
+       return (<Categoria 
+        {...item}
+        {...ventas}
+        />)
+      })}
+       
     </Container>
   )
 }

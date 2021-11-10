@@ -4,7 +4,8 @@ import Amplify ,{API , graphqlOperation } from "aws-amplify";
 import {listVentas} from '../graphql/queries'
 import {withAuthenticator,AmplifySignOut} from '@aws-amplify/ui-react'
 import awsExport from '../aws-exports';
-import Categorias from './Categorias'
+import Categorias from './Categorias';
+import data from '../compo/Data';
 Amplify.configure(awsExport)
 
 
@@ -39,7 +40,10 @@ useEffect(()=>{
   return (
     <Container >
      <AmplifySignOut/>
-     <Categorias ventas={ventas}/>
+     <Categorias 
+     ventas={ventas}
+    
+     />
     </Container>
   )
 }
