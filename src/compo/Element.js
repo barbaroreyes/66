@@ -4,17 +4,22 @@ import styled from 'styled-components';
 import {useParams} from  'react-router-dom';
 
 const Container = styled.div`
-width:100%;
-height:80vh;
-
-
+width:450px;
+height:40vh;
+display:flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+border:1px solid;
+margin :70px;
 `
 const Element = (props) => {
 
     
   return (
     <Container>
-       element
+       <h3>{props.name}</h3>
+       <img width="100%" height="470vh" src={props.image} alt=''/>
     </Container>
   )
 }

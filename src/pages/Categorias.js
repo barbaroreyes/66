@@ -9,6 +9,7 @@ flex-wrap: wrap;
 justify-content: center;
 border:1px solid;
 margin-top:100px;
+// height: 110vh;
 `
 const H1 = styled.h1`
 width:100%;

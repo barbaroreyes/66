@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import {useParams} from  'react-router-dom'
 const Container = styled.div`
 width:100%;
-height:80vh;
+// height:90vh;
+display:flex;
+flex-wrap:wrap;
 
 
 `
@@ -12,10 +14,17 @@ height:80vh;
 
 const Elements = (props) => {
  
-
+  
   return (
     <Container>
-       <Element/>
+      {props.ventas.map((item,i)=>{
+        return (
+          <Element
+          {...item}
+          />
+        )
+      })}
+      
     </Container>
   )
 }

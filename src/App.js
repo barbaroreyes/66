@@ -9,7 +9,7 @@ import Footer from './compo/Footer';
 import Home from './pages/Home';
 import Elements from './pages/Elements'
 import LondingPage from './pages/LondingPage';
-// import data from './compo/Data';
+import data from './compo/Data';
 // import Prendas from './pages/Ventas'
 // import VentaDetails from './pages/VentaDetails';
 // import Error from './pages/Error'
@@ -36,8 +36,8 @@ useEffect(()=>{
    }
  }
 
-
-
+const filterre = new Set(ventas.filter(item => item.categoria))
+  console.log('filterre',filterre)
   return (
     <div className="App">
       <Router>
@@ -45,7 +45,7 @@ useEffect(()=>{
       <Header/>
         <Routes>
        <Route path='/' element={<LondingPage/>}/>
-       <Route path='/login' element={<Home ventas={ventas}/>}/>
+       <Route path='/login' element={<Home ventas={data}/>}/>
        <Route path='/elements' element={<Elements ventas={ventas}/>}/>
        {/* <Route path='/elements/:id' element={<Element/>}/> */}
        {/* 
@@ -55,7 +55,7 @@ useEffect(()=>{
        <Route path='/error' element={<Error/>}/>
        <Route path='/admin' element={<Admin/>}/> */}
        </Routes>
-      <Footer/>
+      <Footer ventas={data}/>
       </Router>
     
     </div>
