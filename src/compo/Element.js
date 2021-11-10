@@ -10,10 +10,14 @@ display:flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-border:1px solid;
+// border:1px solid;
 margin :70px;
 padding:20px;
 `
+const Span = styled.span`
+margin:30px;
+`
+
 const Element = (props) => {
 
     
@@ -21,7 +25,7 @@ const Element = (props) => {
     <Container>
        <h3>{props.name}</h3>
        <img width="100%" height="490vh" src={props.image} alt=''/>
-       <span>${props.price}</span>
+       <Span>${props.price}</Span>
     </Container>
   )
 }
