@@ -1,31 +1,53 @@
+import React,{useState , useEffect} from 'react'
 import {BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 import './App.css';
-// import Checkout from './pages/Checkout';
+import Amplify ,{API , graphqlOperation } from "aws-amplify";
+import {listVentas} from './graphql/queries'
+import awsExport from './aws-exports';
 import Header from './compo/Header.js';
 import Footer from './compo/Footer';
-// import Cart from './pages/Cart';
 import Home from './pages/Home';
 import Elements from './pages/Elements'
-import Element from './compo/Element'
 import LondingPage from './pages/LondingPage';
-import data from './compo/Data';
+// import data from './compo/Data';
 // import Prendas from './pages/Ventas'
 // import VentaDetails from './pages/VentaDetails';
 // import Error from './pages/Error'
 // import Admin from './pages/Admin';
-
+Amplify.configure(awsExport)
 
 function App() {
+  const [ventas ,setVentas] = useState([])
+
+useEffect(()=>{
+ fetchVentas()
+},[])
+
+
+ const fetchVentas = async () => {
+   try {
+     const dataList = await API.graphql(graphqlOperation(listVentas))
+     const  listAll = dataList.data.listVentas.items;
+     console.log('list',listAll)
+     setVentas(listAll)
+     
+   } catch (error) {
+     
+   }
+ }
+
+
+
   return (
     <div className="App">
       <Router>
-        {/* <header style={{border: '1px solid',with:'100%',height:'10vh'}}>hello</header> */}
+      
       <Header/>
         <Routes>
        <Route path='/' element={<LondingPage/>}/>
-       <Route path='/login' element={<Home data={data}/>}/>
-       <Route path='/elements' element={<Elements/>}/>
-       <Route path='/elements/:id' element={<Element/>}/>
+       <Route path='/login' element={<Home ventas={ventas}/>}/>
+       <Route path='/elements' element={<Elements ventas={ventas}/>}/>
+       {/* <Route path='/elements/:id' element={<Element/>}/> */}
        {/* 
        <Route path='/cart' element={<Cart/>}/>
        <Route path='/checkout' element={<Checkout/>}/>

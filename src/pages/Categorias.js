@@ -14,16 +14,16 @@ const H1 = styled.h1`
 width:100%;
 `
 
-const Categorias = ({ventas}) => {
+const Categorias = (props) => {
   
 
   return (
     <Container>
       <H1>Categorias</H1>
-      {ventas.map((item,i)=>{
+      {props.ventas.map((item,i)=>{
        return (<Categoria 
+        
         {...item}
-        {...ventas}
         />)
       })}
        
