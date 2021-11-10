@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components';
-import {useParams} from  'react-router-dom';
+import {useParams,useNavigate} from  'react-router-dom';
 
 const Container = styled.div`
 width:450px;
@@ -19,10 +19,11 @@ margin:30px;
 `
 
 const Element = (props) => {
+const navigate =useNavigate()
 
     
   return (
-    <Container>
+    <Container onClick={()=>{navigate('/ventadetails')}}>
        <h3>{props.name}</h3>
        <img width="100%" height="490vh" src={props.image} alt=''/>
        <Span>${props.price}</Span>
